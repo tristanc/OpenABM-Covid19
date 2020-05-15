@@ -40,7 +40,7 @@ typedef struct{
 	double infectious_rate;         // mean total number of people infected for a mean person
 
 	double relative_susceptibility[N_AGE_GROUPS]; // relative susceptibility of an age group
-	double adjusted_susceptibility[N_AGE_GROUPS]; // adjusted susceptibility of an age group (normalising for interactions)
+	double mean_weighted_daily_interactions;	  // the mean number of weighted daily interactions
 
 	double relative_transmission[N_INTERACTION_TYPES]; 		// relative transmission rate by the type of interactions (e.g. household/workplace/random) w/o social distance
 	double relative_transmission_used[N_INTERACTION_TYPES]; // relative transmission rate by the type of interactions (e.g. household/workplace/random)

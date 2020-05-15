@@ -156,17 +156,6 @@ double get_param_relative_susceptibility(parameters *params, int idx)
 }
 
 /*****************************************************************************************
-*  Name: 		get_param_adjusted_susceptibility
-*  Description: Gets the value of a parameter
-******************************************************************************************/
-double get_param_adjusted_susceptibility(parameters *params, int idx)
-{
-    if (idx >= N_AGE_GROUPS) return ERROR;
-
-    return params->adjusted_susceptibility[idx];
-}
-
-/*****************************************************************************************
 *  Name: 		get_param_relative_transmission
 *  Description: Gets the value of a parameter
 ******************************************************************************************/
@@ -894,17 +883,6 @@ int set_param_relative_susceptibility(parameters *params, double value, int idx)
 }
 
 /*****************************************************************************************
-*  Name:        set_param_adjusted_susceptibility
-*  Description: Sets the value of parameter in array
-******************************************************************************************/
-int set_param_adjusted_susceptibility(parameters *params, double value, int idx)
-{
-    if (idx >= N_AGE_GROUPS) return ERROR;
-    params->adjusted_susceptibility[idx] = value;
-    return TRUE;
-}
-
-/*****************************************************************************************
 *  Name:        set_param_relative_transmission
 *  Description: Sets the value of parameter in array
 ******************************************************************************************/
@@ -1570,17 +1548,6 @@ void get_param_array_relative_susceptibility(parameters *params, double *value)
 }
 
 /*****************************************************************************************
-*  Name:        get_param_array_adjusted_susceptibility
-*  Description: Gets the value of an array
-******************************************************************************************/
-void get_param_array_adjusted_susceptibility(parameters *params, double *value)
-{
-    for (int idx = 0; idx < N_AGE_GROUPS; idx++) {
-        value[idx] = params->adjusted_susceptibility[idx];
-    } 
-}
-
-/*****************************************************************************************
 *  Name:        get_param_array_relative_transmission
 *  Description: Gets the value of an array
 ******************************************************************************************/
@@ -1743,17 +1710,6 @@ void set_param_array_relative_susceptibility(parameters *params, double *value)
 {
     for (int idx = 0; idx < N_AGE_GROUPS; idx++) {
         params->relative_susceptibility[idx] = value[idx];
-    }
-}
-
-/*****************************************************************************************
-*  Name:        set_param_array_adjusted_susceptibility
-*  Description: Sets the value of parameter in array
-******************************************************************************************/
-void set_param_array_adjusted_susceptibility(parameters *params, double *value)
-{
-    for (int idx = 0; idx < N_AGE_GROUPS; idx++) {
-        params->adjusted_susceptibility[idx] = value[idx];
     }
 }
 

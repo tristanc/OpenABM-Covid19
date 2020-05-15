@@ -71,7 +71,7 @@ void initialize_hazard(
 	parameters *params
 )
 {
-	indiv->hazard = gsl_ran_exponential( rng, 1.0 ) / params->adjusted_susceptibility[indiv->age_group];
+	indiv->hazard = gsl_ran_exponential( rng, 1.0 ) / params->relative_susceptibility[indiv->age_group];
 }
 
 /*****************************************************************************************

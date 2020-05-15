@@ -213,6 +213,9 @@ void read_param_file( parameters *params)
 	check = fscanf(parameter_file, " %lf ,", &(params->daily_non_cov_symptoms_rate));
 	if( check < 1){ print_exit("Failed to read parameter daily_non_cov_symptoms_rate\n"); };
 
+	check = fscanf(parameter_file, " %lf ,", &(params->mean_weighted_daily_interactions));
+	if( check < 1){ print_exit("Failed to read parameter mean_weighted_daily_interactions\n"); };
+
 	for( i = 0; i < N_AGE_GROUPS; i++ )
 		{
 			check = fscanf(parameter_file, " %lf ,", &(params->relative_susceptibility[i]));

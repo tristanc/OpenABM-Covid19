@@ -265,11 +265,6 @@ class TestClass(object):
         for i in range(covid19.N_AGE_GROUPS):
             np.testing.assert_equal(set_age_groups[i], get_age_groups[i])
 
-        covid19.set_param_array_adjusted_susceptibility(params, set_age_groups)
-        covid19.get_param_array_adjusted_susceptibility(params, get_age_groups)
-        for i in range(covid19.N_AGE_GROUPS):
-            np.testing.assert_equal(set_age_groups[i], get_age_groups[i])
-
         covid19.set_param_array_relative_transmission(params, set_interaction_types)
         covid19.get_param_array_relative_transmission(params, get_interaction_types)
         for i in range(covid19.N_INTERACTION_TYPES):
