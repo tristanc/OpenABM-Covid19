@@ -146,14 +146,17 @@ void update_random_interactions( individual *indiv, parameters* params )
 {
 	double n = indiv->base_random_interactions;
 	int lockdown;
+	int status;
 
-	if( !indiv->quarantined )
+	if( !indiv->quarantined || !params->random_interactions_quarantine_replacement )
 	{
 		lockdown = params->lockdown_on;
 		if( indiv->age_type == AGE_TYPE_ELDERLY )
 			lockdown = max( lockdown, params->lockdown_elderly_on );
 
-		switch( indiv->status )
+		status = ifelse( params->random_interactions_quarantine_replacement, indiv->status, SUSCEPTIBLE );
+
+		switch( status )
 		{
 			case DEATH:			n = 0; 										 break;
 			case HOSPITALISED:	n = params->hospitalised_daily_interactions; break;

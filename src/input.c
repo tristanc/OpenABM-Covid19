@@ -405,6 +405,8 @@ void read_param_file( parameters *params)
 	check = fscanf(parameter_file, " %i ,", &(params->intervention_start_time));
 	if( check < 1){ print_exit("Failed to read parameter intervention_start_time)\n"); };
 
+	params->random_interactions_quarantine_replacement = TRUE;
+
 	fclose(parameter_file);
 }
 

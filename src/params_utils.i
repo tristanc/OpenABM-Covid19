@@ -3,6 +3,16 @@
 %include "carrays.i"
 
 %inline %{
+
+/*****************************************************************************************
+*  Name:        get_random_interactions_quarantine_replacement
+*  Description: Gets the value of an int parameter
+******************************************************************************************/
+int get_random_interactions_quarantine_replacement(parameters *params)
+{
+    return params->random_interactions_quarantine_replacement;
+}
+
 /*****************************************************************************************
 *  Name:        get_param_quarantine_days
 *  Description: Gets the value of an int parameter
@@ -786,6 +796,16 @@ double get_param_icu_allocation(parameters *params, int idx)
     return params->icu_allocation[idx];
 }
 
+
+/*****************************************************************************************
+*  Name:        set_random_interactions_quarantine_replacement
+*  Description: Sets the value of an int parameter
+******************************************************************************************/
+int set_random_interactions_quarantine_replacement(parameters *params, double value)
+{
+    params->random_interactions_quarantine_replacement = value;
+    return TRUE;
+}
 
 /*****************************************************************************************
 *  Name:        set_param_rng_seed

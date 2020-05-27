@@ -603,13 +603,14 @@ void add_interactions_from_network(
 void build_daily_newtork( model *model )
 {
 	int idx, day;
+	int random_replace = model->params->random_interactions_quarantine_replacement;
 
 	day = model->interaction_day_idx;
 	for( idx = 0; idx < model->params->n_total; idx++ )
 		model->population[ idx ].n_interactions[ day ] = 0;
 
 	build_random_network( model );
-	add_interactions_from_network( model, model->random_network, FALSE, FALSE, 0 );
+	add_interactions_from_network( model, model->random_network, !random_replace, !random_replace, 0 );
 	add_interactions_from_network( model, model->household_network, TRUE, FALSE, 0 );
 
 	for( idx = 0; idx < N_OCCUPATION_NETWORKS; idx++ )

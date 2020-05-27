@@ -30,6 +30,9 @@ typedef struct{
 	double mean_random_interactions[N_AGE_TYPES]; // mean number of random interactions each day
 	double sd_random_interactions[N_AGE_TYPES];   // sd number of random interactions each day
 	int random_interaction_distribution;          // distribution from which each person random interactions are drawn
+
+	int random_interactions_quarantine_replacement;	// whether people should have replacement interactions on the random network if others are quarantined
+
 	double mean_work_interactions[N_OCCUPATION_NETWORKS];// mean number of regular work interactions
 	double daily_fraction_work;      			// fraction of daily work interactions without social-distancing
 	double daily_fraction_work_used[N_OCCUPATION_NETWORKS];  // fraction of daily work interactions with social-distancing
