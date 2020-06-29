@@ -362,6 +362,15 @@ int get_model_param_test_release_on_negative(model *model)
 }
 
 /*****************************************************************************************
+*  Name:		get_model_param_test_release_on_negative_index
+*  Description: Gets the value of an int parameter
+******************************************************************************************/
+int get_model_param_test_release_on_negative_index(model *model)
+{
+    return model->params->test_release_on_negative_index;
+}
+
+/*****************************************************************************************
 *  Name:		get_model_param_test_on_traced
 *  Description: Gets the value of an int parameter
 ******************************************************************************************/
@@ -727,6 +736,16 @@ int set_model_param_test_on_traced( model *model, int value )
 int set_model_param_test_release_on_negative( model *model, int value )
 {
     model->params->test_release_on_negative = value;
+    return TRUE;
+}
+
+/*****************************************************************************************
+*  Name:		set_model_param_test_release_on_negative_index
+*  Description: Sets the value of parameter
+******************************************************************************************/
+int set_model_param_test_release_on_negative_index( model *model, int value )
+{
+    model->params->test_release_on_negative_index = value;
     return TRUE;
 }
 
