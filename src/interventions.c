@@ -580,7 +580,7 @@ void intervention_test_result( model *model, individual *indiv )
 {
 	if( indiv->quarantine_test_result == FALSE )
 	{
-		if( model->params->test_release_on_negative )
+		if( model->params->test_release_on_negative || (model->params->test_release_on_negative_index && indiv->index_trace_token != NULL ) )
 		{
 			remove_traces_on_individual( model, indiv );
 			intervention_trace_token_release( model, indiv );
