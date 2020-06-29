@@ -136,6 +136,7 @@ typedef struct{
 	int test_result_wait_priority;			// number of days to wait for a priority test result
 	int test_order_wait_priority;			// minimum number of days to wait for a priority test to be taken
 	int test_release_on_negative;			// release on a negative test result
+	int test_release_on_negative_index;		// release index case on a negative test result
 	
 	int priority_test_contacts[N_AGE_GROUPS];      // number of contacts that triggers priority test
 	
@@ -216,6 +217,7 @@ int set_model_param_relative_transmission( model *model, double value, int type 
 int get_model_param_quarantine_household_contacts_on_symptoms(model *model);
 int get_model_param_test_on_symptoms(model *model);
 int get_model_param_test_release_on_negative(model *model);
+int get_model_param_test_release_on_negative_index(model *model);
 int get_model_param_test_on_traced(model *model);
 int get_model_param_test_result_wait(model *model);
 int get_model_param_test_order_wait(model *model);
@@ -256,6 +258,7 @@ int set_model_param_quarantine_household_contacts_on_positive(model *model, int 
 int set_model_param_quarantine_household_contacts_on_symptoms(model *model, int value);
 int set_model_param_test_on_symptoms(model *model, int value);
 int set_model_param_test_release_on_negative(model *model, int value);
+int set_model_param_test_release_on_negative_index(model *model, int value);
 int set_model_param_test_on_traced(model *model, int value);
 int set_model_param_test_result_wait(model *model, int value);
 int set_model_param_test_order_wait(model *model, int value);
